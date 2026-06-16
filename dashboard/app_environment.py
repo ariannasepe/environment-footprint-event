@@ -111,4 +111,4 @@ for col, (label, title, desc, page, color, img_b64) in zip(
             </div>
         </div>
         """, unsafe_allow_html=True)
-        st.page_link(page, label=f"Apri {title}")
+        st.page_link(page, label=f"➔ Apri {title}")
