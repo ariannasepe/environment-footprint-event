@@ -1,4 +1,2 @@
-Pandas
-Numpy
-Plotly
-Streamlit
+streamlit
+pandas
