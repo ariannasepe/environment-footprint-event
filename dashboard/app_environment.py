@@ -1,5 +1,5 @@
 """
-app_environment.py  –  Homepage della dashboard EF 3.1
+app_environment.py  -  Homepage della dashboard EF 3.1
 """
 import streamlit as st
 import base64
