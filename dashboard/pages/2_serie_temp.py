@@ -192,7 +192,7 @@ legend_common = dict(
 )
 
 # ── Grafico 1: Serie storica EF3.1 ───────────────────────────────────────────
-section_header("Grafico 1", "Time Series dell'indice EF3.1")
+section_header("Grafico 1", "Serie storica dell'indice EF3.1")
 
 fig1 = go.Figure()
 for paese in sorted(paesi_sel):
