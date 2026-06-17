@@ -223,7 +223,7 @@ st.plotly_chart(fig1, use_container_width=True)
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # ── Grafico 2: Percentuale media IC nel tempo ─────────────────────────────────
-section_header("Grafico 2", "Serie storica della percentuale media delle categorie di impatto")
+section_header("Grafico 2", "Rilevanza media europea delle categorie di impatto nel tempo")
 
 fig2 = go.Figure()
 for i, col in enumerate(IC_COLS):
@@ -299,7 +299,7 @@ st.plotly_chart(fig_rilevanza_ic("Land use impact", "Land use"), use_container_w
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # ── Grafico 6: Rilevanza IC per paese singolo ─────────────────────────────────
-section_header("Grafico 6", f"Rilevanza delle categorie di impatto · {paese_singolo}")
+section_header("Grafico 6", "Rilevanza delle categorie di impatto per paese singolo")
 
 df_paese = df[df["location"] == paese_singolo].sort_values("refYear")
 if df_paese.empty:
