@@ -144,14 +144,14 @@ st.markdown("""
     <strong>Le quattro sezioni</strong><br><br>
     <strong>1. Mappa EF3.1 Index</strong> - Visualizzazione geografica interattiva
     dell&#39;indice composito EF3.1 per paese, realizzata con Kepler.gl.<br><br>
-    <strong>2. Serie storica</strong> — Analisi temporale dell&#39;indice EF3.1 per paese nel
+    <strong>2. Serie storica</strong> - Analisi temporale dell&#39;indice EF3.1 per paese nel
     periodo 2015-2022, con linea mediana europea come riferimento. Include anche la
     serie storica della rilevanza percentuale delle 16 categorie di impatto, con grafici
     dedicati a Climate change, Water use e Land use, e un grafico per paese singolo.<br><br>
-    <strong>3. Categorie di impatto</strong> — Composizione percentuale dell&#39;indice EF3.1
+    <strong>3. Categorie di impatto</strong> - Composizione percentuale dell&#39;indice EF3.1
     per paese e anno, visualizzata tramite grafico a barre impilate normalizzate e
     radar chart per il confronto diretto tra fino a 5 paesi.<br><br>
-    <strong>4. Processi produttivi</strong> — Scatter plot interattivo degli impatti
+    <strong>4. Processi produttivi</strong> - Scatter plot interattivo degli impatti
     ambientali per processo produttivo, con assi selezionabili tra le 16 categorie
     di impatto, colorazione per categoria merceologica e tooltip con il nome del processo.
 </div>
