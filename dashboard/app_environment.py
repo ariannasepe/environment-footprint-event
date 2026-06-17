@@ -250,7 +250,7 @@ st.markdown('''
 <p class="section-label">Metodologia</p>
 <p class="section-title">Note metodologiche</p>
 ''', unsafe_allow_html=True)
-
+ 
 st.markdown('''
 <div class="insight-box">
     <strong>Dataset utilizzati</strong><br><br>
