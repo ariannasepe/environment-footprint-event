@@ -132,11 +132,11 @@ st.markdown("""
     Per le prime tre sezioni della dashboard è stato utilizzato il dataset
     <strong>Scores (PaesexAnno)</strong>, contenente i valori dell&#39;indice composito EF3.1
     e delle 16 categorie di impatto già normalizzati e pesati secondo i fattori ufficiali
-    JRC, per 28 paesi europei nel periodo 2015–2022.<br><br>
+    JRC, per 28 paesi europei nel periodo 2015-2022.<br><br>
     Per la quarta sezione è stato utilizzato un dataset di processi produttivi con valori
     grezzi delle 16 categorie di impatto. Non disponendo di un anno di riferimento per
     ciascun processo, la normalizzazione è stata effettuata dividendo ogni valore per la
-    <strong>media dei Normalisation Factors europei</strong> calcolata sul periodo 2015–2022,
+    <strong>media dei Normalisation Factors europei</strong> calcolata sul periodo 2015-2022,
     ottenuti dal file <em>Normalisation Factors (EUxYear)</em>. Questa scelta rappresenta
     un&#39;approssimazione rispetto alla normalizzazione anno per anno applicata nel dataset
     originale, motivata dall&#39;assenza della colonna anno nel dataset dei processi.
@@ -145,7 +145,7 @@ st.markdown("""
     <strong>1. Mappa EF3.1 Index</strong> — Visualizzazione geografica interattiva
     dell&#39;indice composito EF3.1 per paese, realizzata con Kepler.gl.<br><br>
     <strong>2. Serie storica</strong> — Analisi temporale dell&#39;indice EF3.1 per paese nel
-    periodo 2015–2022, con linea mediana europea come riferimento. Include anche la
+    periodo 2015-2022, con linea mediana europea come riferimento. Include anche la
     serie storica della rilevanza percentuale delle 16 categorie di impatto, con grafici
     dedicati a Climate change, Water use e Land use, e un grafico per paese singolo.<br><br>
     <strong>3. Categorie di impatto</strong> — Composizione percentuale dell&#39;indice EF3.1
