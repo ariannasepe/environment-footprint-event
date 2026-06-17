@@ -130,7 +130,7 @@ st.markdown("""
 <div class="insight-box">
     <strong>Dataset utilizzati</strong><br><br>
     Per le prime tre sezioni della dashboard è stato utilizzato il dataset
-    <strong>Scores (PaesexAnno)</strong>, contenente i valori dell'indice composito EF3.1
+    <strong>Scores (PaesexAnno)</strong>, contenente i valori dell&#39;indice composito EF3.1
     e delle 16 categorie di impatto già normalizzati e pesati secondo i fattori ufficiali
     JRC, per 28 paesi europei nel periodo 2015–2022.<br><br>
     Per la quarta sezione è stato utilizzato un dataset di processi produttivi con valori
@@ -138,17 +138,17 @@ st.markdown("""
     ciascun processo, la normalizzazione è stata effettuata dividendo ogni valore per la
     <strong>media dei Normalisation Factors europei</strong> calcolata sul periodo 2015–2022,
     ottenuti dal file <em>Normalisation Factors (EUxYear)</em>. Questa scelta rappresenta
-    un'approssimazione rispetto alla normalizzazione anno per anno applicata nel dataset
-    originale, motivata dall'assenza della colonna anno nel dataset dei processi.
+    un&#39;approssimazione rispetto alla normalizzazione anno per anno applicata nel dataset
+    originale, motivata dall&#39;assenza della colonna anno nel dataset dei processi.
     <br><br>
     <strong>Le quattro sezioni</strong><br><br>
-    <strong>1. Mappa EF3.1 Index</strong> — Visualizzazione geografica interattiva dell'indice
-    composito EF3.1 per paese, realizzata con Kepler.gl.<br><br>
-    <strong>2. Serie storica</strong> — Analisi temporale dell'indice EF3.1 per paese nel
+    <strong>1. Mappa EF3.1 Index</strong> — Visualizzazione geografica interattiva
+    dell&#39;indice composito EF3.1 per paese, realizzata con Kepler.gl.<br><br>
+    <strong>2. Serie storica</strong> — Analisi temporale dell&#39;indice EF3.1 per paese nel
     periodo 2015–2022, con linea mediana europea come riferimento. Include anche la
     serie storica della rilevanza percentuale delle 16 categorie di impatto, con grafici
     dedicati a Climate change, Water use e Land use, e un grafico per paese singolo.<br><br>
-    <strong>3. Categorie di impatto</strong> — Composizione percentuale dell'indice EF3.1
+    <strong>3. Categorie di impatto</strong> — Composizione percentuale dell&#39;indice EF3.1
     per paese e anno, visualizzata tramite grafico a barre impilate normalizzate e
     radar chart per il confronto diretto tra fino a 5 paesi.<br><br>
     <strong>4. Processi produttivi</strong> — Scatter plot interattivo degli impatti
