@@ -116,7 +116,7 @@ for col, (label, title, desc, page, color, img_b64) in zip(
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 st.markdown("""
 <p class="section-label">Metodologia</p>
-<p class="section-title">Note metodologiche</p>
+<p class="section-title">Nota metodologica</p>
 """, unsafe_allow_html=True)
 
 st.markdown("""
