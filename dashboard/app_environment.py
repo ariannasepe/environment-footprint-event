@@ -125,8 +125,8 @@ st.markdown('''
     <strong>Dataset utilizzati</strong><br><br>
     Per le prime tre sezioni della dashboard e stato utilizzato il dataset
     <strong>Scores (PaesexAnno)</strong>, contenente i valori dell&#39;indice composito EF3.1
-    e delle 16 categorie di impatto gia normalizzati e pesati secondo i fattori ufficiali
-    JRC, per 28 paesi europei nel periodo 2015-2022.<br><br>
+    e delle 16 categorie di impatto gia normalizzati e pesati secondo i pesi definiti dalla Commissione Europea, 
+    per 28 paesi europei nel periodo 2015-2022.<br><br>
     Per la quarta sezione e stato utilizzato un dataset di processi produttivi con valori
     grezzi delle 16 categorie di impatto. Non disponendo di un anno di riferimento per
     ciascun processo, la normalizzazione e stata effettuata dividendo ogni valore per la
