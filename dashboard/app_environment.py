@@ -113,38 +113,40 @@ for col, (label, title, desc, page, color, img_b64) in zip(
         """, unsafe_allow_html=True)
         st.page_link(page, label=f"➔ Apri {title}")
 
+# ── Nota metodologica ─────────────────────────────────────────────────────
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
-st.markdown("""
+st.markdown('''
 <p class="section-label">Metodologia</p>
 <p class="section-title">Note metodologiche</p>
-""", unsafe_allow_html=True)
-
-st.markdown("""
+''', unsafe_allow_html=True)
+ 
+st.markdown('''
 <div class="insight-box">
-    <strong>Metodologia EF 3.1 – Environmental Footprint</strong><br><br>
-    La dashboard visualizza i risultati di uno studio condotto applicando la metodologia
-    <strong>Environmental Footprint versione 3.1</strong>, sviluppata dalla Commissione Europea
-    tramite il Joint Research Centre (JRC). L'indice composito EF3.1 è calcolato come somma
-    ponderata di <strong>16 categorie di impatto ambientale</strong>, ciascuna pesata secondo
-    i fattori ufficiali JRC.
+    <strong>Dataset utilizzati</strong><br><br>
+    Per le prime tre sezioni della dashboard e stato utilizzato il dataset
+    <strong>Scores (PaesexAnno)</strong>, contenente i valori dell&#39;indice composito EF3.1
+    e delle 16 categorie di impatto gia normalizzati e pesati secondo i fattori ufficiali
+    JRC, per 28 paesi europei nel periodo 2015-2022.<br><br>
+    Per la quarta sezione e stato utilizzato un dataset di processi produttivi con valori
+    grezzi delle 16 categorie di impatto. Non disponendo di un anno di riferimento per
+    ciascun processo, la normalizzazione e stata effettuata dividendo ogni valore per la
+    <strong>media dei Normalisation Factors europei</strong> calcolata sul periodo 2015-2022,
+    ottenuti dal file <em>Normalisation Factors (EUxYear)</em>. Questa scelta rappresenta
+    un&#39;approssimazione rispetto alla normalizzazione anno per anno applicata nel dataset
+    originale, motivata dall&#39;assenza della colonna anno nel dataset dei processi.
     <br><br>
-    <strong>Normalizzazione</strong><br>
-    I valori di ciascuna categoria di impatto sono normalizzati rispetto al totale europeo
-    della stessa categoria per anno (<em>Normalisation Factors</em>), in modo da rendere
-    comparabili grandezze con unità di misura diverse. Per i processi produttivi
-    (Sezione 4), la normalizzazione è stata effettuata utilizzando la media dei
-    Normalisation Factors disponibili per il periodo 2015–2022.
-    <br><br>
-    <strong>Dati</strong><br>
-    L'analisi copre <strong>28 paesi europei</strong> nel periodo <strong>2015–2022</strong>.
-    I dati di base derivano dalla pipeline di calcolo dello studio originale.
-    Il dataset dei processi produttivi include oltre 1.000 processi classificati
-    in 12 categorie merceologiche tramite classificazione automatica per keyword.
-    <br><br>
-    <strong>Pesi JRC – EF 3.1</strong><br>
-    I pesi utilizzati per il calcolo dell'indice composito sono quelli ufficiali
-    pubblicati dal JRC: Cambiamento climatico 21.06%, Particolato 8.96%,
-    Uso risorse fossili 8.32%, Uso del suolo 7.94%, Uso idrico 8.51%,
-    Acidificazione 6.20%, Deplezione ozono 6.31% e altri 9 indicatori.
+    <strong>Le quattro sezioni</strong><br><br>
+    <strong>1. Mappa EF3.1 Index</strong> - Visualizzazione geografica interattiva
+    dell&#39;indice composito EF3.1 per paese, realizzata con Kepler.gl.<br><br>
+    <strong>2. Serie storica</strong> - Analisi temporale dell&#39;indice EF3.1 per paese nel
+    periodo 2015-2022, con linea mediana europea come riferimento. Include anche la
+    serie storica della rilevanza percentuale delle 16 categorie di impatto, con grafici
+    dedicati a Climate change, Water use e Land use, e un grafico per paese singolo.<br><br>
+    <strong>3. Categorie di impatto</strong> - Composizione percentuale dell&#39;indice EF3.1
+    per paese e anno, visualizzata tramite grafico a barre impilate normalizzate e
+    radar chart per il confronto diretto tra fino a 5 paesi.<br><br>
+    <strong>4. Processi produttivi</strong> - Scatter plot interattivo degli impatti
+    ambientali per processo produttivo, con assi selezionabili tra le 16 categorie
+    di impatto, colorazione per categoria merceologica e tooltip con il nome del processo.
 </div>
-""", unsafe_allow_html=True)
+''', unsafe_allow_html=True)
