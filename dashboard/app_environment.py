@@ -86,7 +86,7 @@ cards = [
      "pages/2_serie_temp.py", "#2E86AB", img_serie),
     ("Sezione 3", "Categorie di impatto",
      "Composizione delle 16 IC: stacked bar e radar chart.",
-     "pages/3_categorie.py", "#4FC3F7", img_categorie),
+     "pages/3_categorie.py", "#008000", img_categorie),
     ("Sezione 4", "Processi produttivi",
      "Scatter plot degli impatti per processo produttivo.",
      "pages/4_processi.py", "#E85933", img_processi),
