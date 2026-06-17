@@ -112,3 +112,39 @@ for col, (label, title, desc, page, color, img_b64) in zip(
         </div>
         """, unsafe_allow_html=True)
         st.page_link(page, label=f"➔ Apri {title}")
+
+st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
+st.markdown("""
+<p class="section-label">Metodologia</p>
+<p class="section-title">Note metodologiche</p>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<div class="insight-box">
+    <strong>Metodologia EF 3.1 – Environmental Footprint</strong><br><br>
+    La dashboard visualizza i risultati di uno studio condotto applicando la metodologia
+    <strong>Environmental Footprint versione 3.1</strong>, sviluppata dalla Commissione Europea
+    tramite il Joint Research Centre (JRC). L'indice composito EF3.1 è calcolato come somma
+    ponderata di <strong>16 categorie di impatto ambientale</strong>, ciascuna pesata secondo
+    i fattori ufficiali JRC.
+    <br><br>
+    <strong>Normalizzazione</strong><br>
+    I valori di ciascuna categoria di impatto sono normalizzati rispetto al totale europeo
+    della stessa categoria per anno (<em>Normalisation Factors</em>), in modo da rendere
+    comparabili grandezze con unità di misura diverse. Per i processi produttivi
+    (Sezione 4), la normalizzazione è stata effettuata utilizzando la media dei
+    Normalisation Factors disponibili per il periodo 2015–2022.
+    <br><br>
+    <strong>Dati</strong><br>
+    L'analisi copre <strong>28 paesi europei</strong> nel periodo <strong>2015–2022</strong>.
+    I dati di base derivano dalla pipeline di calcolo dello studio originale.
+    Il dataset dei processi produttivi include oltre 1.000 processi classificati
+    in 12 categorie merceologiche tramite classificazione automatica per keyword.
+    <br><br>
+    <strong>Pesi JRC – EF 3.1</strong><br>
+    I pesi utilizzati per il calcolo dell'indice composito sono quelli ufficiali
+    pubblicati dal JRC: Cambiamento climatico 21.06%, Particolato 8.96%,
+    Uso risorse fossili 8.32%, Uso del suolo 7.94%, Uso idrico 8.51%,
+    Acidificazione 6.20%, Deplezione ozono 6.31% e altri 9 indicatori.
+</div>
+""", unsafe_allow_html=True)
