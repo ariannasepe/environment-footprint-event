@@ -126,16 +126,141 @@ st.markdown("""
 <p class="section-title">Note metodologiche</p>
 """, unsafe_allow_html=True)
 
-st.markdown("""
+"""
+app_environment.py  –  Homepage della dashboard EF 3.1
+"""
+import streamlit as st
+import base64
+import os
+from shared_environment import SHARED_CSS, render_header, kpi_card
+
+LOGO_B64 = ""
+
+st.set_page_config(
+    page_title="Environment Footprint Event",
+    page_icon="",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+st.markdown(SHARED_CSS, unsafe_allow_html=True)
+
+def img_to_b64(path: str) -> str:
+    with open(path, "rb") as f:
+        return base64.b64encode(f.read()).decode()
+
+base = os.path.dirname(os.path.abspath(__file__))
+
+img_mappa      = img_to_b64(os.path.join(base, "assets", "wikiimages-world-11047.jpg"))
+img_serie      = img_to_b64(os.path.join(base, "assets", "lalmch-computer-767776.jpg"))
+img_categorie  = img_to_b64(os.path.join(base, "assets", "goranh-agriculture-10257973.jpg"))
+img_processi   = img_to_b64(os.path.join(base, "assets", "1778011-port-terminal-4023802.jpg"))
+
+with st.sidebar:
+    if LOGO_B64:
+        logo_html = (
+            f'<a href="https://sblconsultancy.it/" target="_blank" rel="noopener noreferrer">'
+            f'<img src="{LOGO_B64}" width="80" height="80" style="border-radius:50%;object-fit:cover;" />'
+            f'</a>'
+        )
+    else:
+        logo_html = """<div style="
+            width:80px;height:80px;
+            background:linear-gradient(135deg,rgba(255,255,255,0.2),rgba(255,255,255,0.05));
+            border:1.5px solid rgba(255,255,255,0.25);
+            border-radius:50%;display:flex;align-items:center;
+            justify-content:center;font-size:1.5rem;color:#fff;font-weight:800;
+        ">EF</div>"""
+
+    st.markdown(f"""
+    <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;margin-bottom:0.8rem;margin-top:-1rem;">
+        {logo_html}
+        <div style="text-align:center;">
+            <div style="font-size:0.95rem;font-weight:700;color:#fff;
+                        line-height:1.2;">ENVIRONMENT FOOTPRINT EVENT</div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("---")
+    st.markdown('<span class="nav-title">Sezioni</span>', unsafe_allow_html=True)
+    st.page_link("app_environment.py",    label="Home")
+    st.page_link("pages/1_mappa.py",      label="Mappa indice EF3.1")
+    st.page_link("pages/2_serie_temp.py", label="Serie storica")
+    st.page_link("pages/3_categorie.py",  label="Categorie di impatto")
+    st.page_link("pages/4_processi.py",   label="Processi produttivi")
+
+render_header(
+    title="ENVIRONMENT FOOTPRINT EVENT",
+    subtitle="Analisi comparativa europea"
+)
+
+st.markdown('''
+<p class="section-label">Navigazione</p>
+<p class="section-title">Le quattro sezioni della dashboard</p>
+''', unsafe_allow_html=True)
+
+col1, col2, col3, col4 = st.columns(4)
+
+cards = [
+    ("Sezione 1", "Mappa indice EF3.1",
+     "Mappa Kepler interattiva dell&#39;indice EF 3.1 per paese e anno.",
+     "pages/1_mappa.py", "#25465D", img_mappa),
+    ("Sezione 2", "Serie storica",
+     "Andamento dell&#39;indice EF nel tempo con mediana europea.",
+     "pages/2_serie_temp.py", "#2E86AB", img_serie),
+    ("Sezione 3", "Categorie di impatto",
+     "Composizione delle 16 IC: stacked bar e radar chart.",
+     "pages/3_categorie.py", "#4FC3F7", img_categorie),
+    ("Sezione 4", "Processi produttivi",
+     "Scatter plot degli impatti per processo produttivo.",
+     "pages/4_processi.py", "#E85933", img_processi),
+]
+
+for col, (label, title, desc, page, color, img_b64) in zip(
+    [col1, col2, col3, col4], cards
+):
+    with col:
+        st.markdown(f'''
+        <div class="kpi-card" style="border-left-color:{color};min-height:300px;padding:0;overflow:hidden;">
+            <div class="top-bar" style="background:{color};opacity:0.7;"></div>
+            <div style="
+                width:100%;height:140px;overflow:hidden;
+                background:url(data:image/jpeg;base64,{img_b64}) center center / cover no-repeat;
+            "></div>
+            <div style="padding:1rem 1.2rem 1.2rem 1.2rem;">
+                <div class="kpi-label" style="margin-top:0.2rem;">{label}</div>
+                <div style="font-size:1rem;font-weight:700;color:{color};
+                            margin-bottom:0.4rem;">{title}</div>
+                <div style="font-size:0.78rem;color:#34465A;line-height:1.5;
+                            margin-bottom:0.8rem;">{desc}</div>
+                <a href="{page}" target="_self" style="
+                    display:block;text-align:center;
+                    background:{color};color:white;
+                    padding:0.45rem 1rem;border-radius:8px;
+                    font-size:0.82rem;font-weight:600;
+                    text-decoration:none;
+                ">Apri {title} &rarr;</a>
+            </div>
+        </div>
+        ''', unsafe_allow_html=True)
+
+# ── Nota metodologica ─────────────────────────────────────────────────────────
+st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
+st.markdown('''
+<p class="section-label">Metodologia</p>
+<p class="section-title">Note metodologiche</p>
+''', unsafe_allow_html=True)
+
+st.markdown('''
 <div class="insight-box">
     <strong>Dataset utilizzati</strong><br><br>
-    Per le prime tre sezioni della dashboard è stato utilizzato il dataset
+    Per le prime tre sezioni della dashboard e stato utilizzato il dataset
     <strong>Scores (PaesexAnno)</strong>, contenente i valori dell&#39;indice composito EF3.1
-    e delle 16 categorie di impatto già normalizzati e pesati secondo i fattori ufficiali
+    e delle 16 categorie di impatto gia normalizzati e pesati secondo i fattori ufficiali
     JRC, per 28 paesi europei nel periodo 2015-2022.<br><br>
-    Per la quarta sezione è stato utilizzato un dataset di processi produttivi con valori
+    Per la quarta sezione e stato utilizzato un dataset di processi produttivi con valori
     grezzi delle 16 categorie di impatto. Non disponendo di un anno di riferimento per
-    ciascun processo, la normalizzazione è stata effettuata dividendo ogni valore per la
+    ciascun processo, la normalizzazione e stata effettuata dividendo ogni valore per la
     <strong>media dei Normalisation Factors europei</strong> calcolata sul periodo 2015-2022,
     ottenuti dal file <em>Normalisation Factors (EUxYear)</em>. Questa scelta rappresenta
     un&#39;approssimazione rispetto alla normalizzazione anno per anno applicata nel dataset
@@ -155,4 +280,4 @@ st.markdown("""
     ambientali per processo produttivo, con assi selezionabili tra le 16 categorie
     di impatto, colorazione per categoria merceologica e tooltip con il nome del processo.
 </div>
-""", unsafe_allow_html=True)
+''', unsafe_allow_html=True)
